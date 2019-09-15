@@ -100,12 +100,23 @@ function squareOrDouble(n) {
 function ageFromBirthDate(birthDate) {
   const _MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365;
 
-  var birthDateNum = parseInt(birthDate, 10)
-  // year = birthDate/ 10000
-  var year = Math.floor(birthDateNum/ 10000) //(rounded down to the nearest year)
+  const year = birthDate.slice(0,4);
+  const month = birthDate.slice(4,6);
+  const day = birthDate.slice(6);
+
+  const today = new Date();
+  const dob = new Date(`${month}/${day}/${year}` );
+  
+  let age = today - dob; 
+  age = age/ _MS_PER_YEAR;
+  return Math.floor(age);
+
+  // var birthDateNum = parseInt(birthDate, 10)
+  // // year = birthDate/ 10000
+  // var year = Math.floor(birthDateNum/ 10000) //(rounded down to the nearest year)
 
 
-  var d = new Date(year, 11, 24);
+  
 
 }
 
