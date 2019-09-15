@@ -50,8 +50,10 @@ function oddsSmallerThan(n)
   {return 0 }
 
   // if(n % 2 === 1 )
+
+  
   else
-  {return (n -1)/2}
+  {return Math.ceil((n -1)/2) }
 
 
 }
